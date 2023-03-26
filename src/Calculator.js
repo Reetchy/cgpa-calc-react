@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import "./App.css";
 
@@ -52,6 +52,21 @@ function Calculator() {
     return cgpa.toFixed(2);
   };
 
+  const saveGrade = () => {
+    if (courses.length <= 0) {
+      alert("No courses to save");
+      return;
+    }
+    const data = { courses, cgpa: getCGPA(), unit: getTotalUnits() };
+    localStorage.setItem("data", JSON.stringify(data));
+    alert("CGPA Saved sucessfully");
+    // console.log(courses);
+  };
+  useEffect(() => {
+    const data = JSON.parse(localStorage.getItem("data"));
+    setCourses(data?.courses);
+  }, []);
+
   return (
     <div className="calculator">
       <h1>CGPA Calculator</h1>
@@ -93,6 +108,9 @@ function Calculator() {
           </tbody>
         </table>
       )}
+      <button onClick={saveGrade} type="submit">
+        Save CGPA
+      </button>
 
       {courses.length > 0 && (
         <div className="cgpa">
