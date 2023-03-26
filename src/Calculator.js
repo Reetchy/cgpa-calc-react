@@ -82,7 +82,7 @@ function Calculator() {
 
         <button type="submit">Add Course</button>
       </form>
-      {courses.length > 0 && (
+      {courses?.length > 0 && (
         <table>
           <thead>
             <tr>
@@ -94,7 +94,7 @@ function Calculator() {
             </tr>
           </thead>
           <tbody>
-            {courses.map((course, index) => (
+            {courses?.map((course, index) => (
               <tr key={index}>
                 <td>{course.courseCode}</td>
                 <td>{course.courseUnit}</td>
@@ -112,7 +112,7 @@ function Calculator() {
         Save CGPA
       </button>
 
-      {courses.length > 0 && (
+      {courses?.length > 0 && (
         <div className="cgpa">
           <p>Total Units: {getTotalUnits()}</p>
           <p>CGPA: {getCGPA()}</p>
