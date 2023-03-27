@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 
+
+
 import "./App.css";
 
 function Calculator() {
@@ -66,9 +68,10 @@ function Calculator() {
     const data = JSON.parse(localStorage.getItem("data"));
     setCourses(data?.courses);
   }, []);
-
+  
   return (
     <div className="calculator">
+    
       <h1>CGPA Calculator</h1>
       <form onSubmit={handleSubmit}>
         <label className="formtext" htmlFor="courseCode">Course Code</label>

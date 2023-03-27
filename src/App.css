@@ -4,12 +4,25 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #e7e6d6;
+  background-color: #f0eedfd7;
  
   border-radius: 7px;
-  box-shadow: 0 2px 4px rgba(213, 117, 21, 0.2);
+  box-shadow: 0 2px 4px rgb(255, 255, 255);
 
 }
+.logoImg img{
+  height: 10vh;
+  justify-items: center;
+  margin: auto;
+}
+.logoImg{
+    text-align: center;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding-bottom: 2rem;
+  }
 body{
   background-image: url(./bg.jpg);
   background-size: cover;
@@ -58,7 +71,7 @@ form button {
   cursor: pointer;
 }
 form button:hover {
-  background-color: #7912cd;
+  background-color: #0a0ef5;
   transition: 2s;
 }
 table {
@@ -75,7 +88,7 @@ table td {
 }
 
 table th {
-  background-color: #7912cd;
+  background-color: #0a0ef5;
   color: #fff;
 }
 
