@@ -65,14 +65,14 @@ form button {
   font-size: 18px;
   border-radius: 5px;
   border: none;
-  background-color: #e1b70d;
+  background-color: #0a0ef5;
   opacity: 90%;
   color: #fff;
   cursor: pointer;
 }
 form button:hover {
-  background-color: #0a0ef5;
-  transition: 2s;
+  background-color: #080969;
+  transition: 1.5s;
 }
 table {
   border-collapse: collapse;
