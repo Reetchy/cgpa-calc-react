@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 
-
-
 import "./App.css";
 
 function Calculator() {
@@ -66,24 +64,23 @@ function Calculator() {
   };
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem("data"));
-    setCourses(data?.courses);
+    data && setCourses(data?.courses);
   }, []);
-  
+
   return (
     <div className="calculator">
-    
       <h1>CGPA Calculator</h1>
       <form onSubmit={handleSubmit}>
-        <label className="formtext" htmlFor="courseCode">Course Code</label>
+        <label htmlFor="courseCode">Course Code</label>
         <input type="text" id="courseCode" required />
 
-        <label className="formtext" htmlFor="courseUnit">Course Unit</label>
+        <label htmlFor="courseUnit">Course Unit</label>
         <input type="number" id="courseUnit" min="1" max="6" required />
 
-        <label className="formtext" htmlFor="score">Score</label>
+        <label htmlFor="score">Score</label>
         <input type="number" id="score" min="1" max="100" required />
 
-        <button className="formtext" type="submit">Add Course</button>
+        <button type="submit">Add Course</button>
       </form>
       {courses?.length > 0 && (
         <table>
@@ -104,14 +101,16 @@ function Calculator() {
                 <td>{course.score}</td>
                 <td>{course.gradePoints}</td>
                 <td>
-                    <ion-icon className="del" name="close-circle" onClick={() => handleDelete(index)}></ion-icon>
+                  <button onClick={() => handleDelete(index)}>Delete</button>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
       )}
-    
+      <button onClick={saveGrade} type="submit">
+        Save CGPA
+      </button>
 
       {courses?.length > 0 && (
         <div className="cgpa">
@@ -119,12 +118,7 @@ function Calculator() {
           <p>CGPA: {getCGPA()}</p>
         </div>
       )}
-
-  <div className="del" onClick={saveGrade}>
-  <ion-icon className="del" name="bookmark" type="submit"></ion-icon>  <>Save Grade</>
-  
-  </div>
-</div>
+    </div>
   );
 }
 
